@@ -89,8 +89,7 @@ jobs:
             
       - name: Build the xiaomi-pipa with GNOME
         run: |
-           yes | pmbootstrap zap
-           rm -r out/*
+           cp xiaomi-pipa.cfg ~/.config/pmbootstrap_v3.cfg
            pmbootstrap install --password 147147 --add postmarketos-ui-gnome
            pmbootstrap export
            cp /tmp/postmarketOS-export/boot.img out/boot-xiaomi-pipa.img
